@@ -20,10 +20,10 @@
             this.ctx = this.canvas.getContext('2d');
         },
         screenshot:function(){
-          const video = document.getElementById('localVideo')?.firstElementChild;
+          const video = document.getElementById('localVideo');
           console.log(video);
           const canvasCtx = this.canvas.getContext('2d');
-          canvasCtx.drawImage(video,0,0,video.videoWidth,video.videoHeight,0,0,video.videoWidth,video.videoHeight,);
+          canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
           console.log(imgURL);
