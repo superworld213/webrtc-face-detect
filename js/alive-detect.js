@@ -20,7 +20,7 @@
             this.ctx = this.canvas.getContext('2d');
         },
         screenshot:function(){
-          const video = window.getComputedStyle(MediaCtrl.video)
+          const video = document.getElementById('localVideo')?.firstElementChild;
           const canvasCtx = this.canvas.getContext('2d');
           canvasCtx.drawImage(video,0,0,video.width,video.height,0,0,video.width,video.height);
           const MIME_TYPE = 'image/png'; // 保存文件类型
