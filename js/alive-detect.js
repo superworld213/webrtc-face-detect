@@ -21,8 +21,8 @@
         },
         screenshot:function(){
           const video = document.getElementById('localVideo');
-          console.log(video);
-          const canvasCtx = this.canvas.getContext('2d');
+          const canvas = document.querySelector('#webrtcCanvas');
+          const canvasCtx = canvas.getContext('2d');
           canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
