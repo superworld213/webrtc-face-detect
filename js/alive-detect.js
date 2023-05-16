@@ -21,8 +21,12 @@
         },
         screenshot:function(){
           const video = document.getElementById('localVideo');
-          const canvas = document.querySelector('#webrtcCanvas');
+          var canvas = document.createElement('canvas');
+          canvas.id = 'webrtcCanvasScreenshot';
+          const canvas = document.querySelector('#webrtcCanvasScreenshot');
           const canvasCtx = canvas.getContext('2d');
+          canvas.width = video.style.width;
+          canvas.height = video.style.height;
           canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
