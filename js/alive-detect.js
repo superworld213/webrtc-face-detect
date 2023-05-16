@@ -22,7 +22,7 @@
         screenshot:function(){
           const video = document.getElementById('localVideo')?.firstElementChild;
           const canvasCtx = this.canvas.getContext('2d');
-          canvasCtx.drawImage(video,0,0,video.width,video.height,0,0,video.width,video.height);
+          canvasCtx.drawImage(video,0,0,video.videoWidth,video.videoHeight,0,0,video.videoWidth,video.videoHeight,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
           console.log(imgURL);
