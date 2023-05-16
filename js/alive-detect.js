@@ -19,6 +19,14 @@
             this.canvas = document.querySelector('#webrtcCanvas');
             this.ctx = this.canvas.getContext('2d');
         },
+        screenshot:function(){
+          const video = window.getComputedStyle(MediaCtrl.video)
+          this.ctx = this.canvas.getContext('2d');
+          canvasCtx.drawImage(video,0,0,video.width,video.height,0,0,video.width,video.height);
+          const MIME_TYPE = 'image/png'; // 保存文件类型
+          const imgURL = canvas.toDataURL(MIME_TYPE);
+          console.log(imgURL);
+        },
         removeCanvas: function () {
             try {
                 MediaCtrl.videoWrapper.removeChild(this.canvas);
