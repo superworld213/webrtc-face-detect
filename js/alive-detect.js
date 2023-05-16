@@ -21,10 +21,10 @@
         },
         screenshot:function(){
           const video = document.getElementById('localVideo');
-          var canvas = document.createElement('canvas');
-          canvas.id = 'webrtcCanvasScreenshot';
-          const canvas = document.querySelector('#webrtcCanvasScreenshot');
+          const canvas = document.createElement('canvas');
           const canvasCtx = canvas.getContext('2d');
+
+          canvas.id = 'webrtcCanvasScreenshot';
           canvas.width = video.style.width;
           canvas.height = video.style.height;
           canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
