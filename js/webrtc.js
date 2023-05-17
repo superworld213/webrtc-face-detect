@@ -13,7 +13,7 @@ var MediaCtrl = {
         var _this = this;
         _this.canResolve = true;
         _this.setMedia();
-        _this.setCloseBtn();
+        // _this.setCloseBtn();
 
         return new Promise(function (resolve, reject) {
             try {

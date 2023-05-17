@@ -34,7 +34,6 @@
     },
     screenshot: function () {
       return new Promise((reseolve, reject) => {
-
         setTimeout(() => {
           try {
             const video = document.querySelector('#localVideo');
@@ -47,8 +46,9 @@
             canvasCtx.drawImage(video, 0, 0, width, height);
             const MIME_TYPE = 'image/png'; // 保存文件类型
             const imgURL = canvas.toDataURL(MIME_TYPE);
-            alert(imgURL);
-            reseolve(imgURL)
+            console.log(imgURL)
+
+            reseolve(imgURL);
           } catch(err) {
             reject(err)
           }
@@ -85,7 +85,7 @@
         var score = Math.round(this.ctracker.getScore() * 100);
         FaceDetectCtrl.setFaceScore(score);
         if (score >= this.passScore) {
-          this.ctracker.draw(CanvasCtrl.canvas);
+          // this.ctracker.draw(CanvasCtrl.canvas);
         }
       } else {
         FaceDetectCtrl.setFaceScore(0);
@@ -105,11 +105,12 @@
               : score >= _this.passScore ? 'yellow' : '';
           CanvasCtrl.score.className = color;
           CanvasCtrl.score.innerText = score;
-          if(CanvasCtrl.score > 50){
+          console.log(score);
+          if(score > 50){
             CanvasCtrl.score.className = 'green';
             CanvasCtrl.score.innerText = '检测通过'
             CanvasCtrl.screenshot()
-            this.stop()
+            FaceDetectCtrl.stop()
           }
         }
         _this.throttle = true;
