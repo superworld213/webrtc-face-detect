@@ -96,8 +96,9 @@
                     //     : score >= _this.passScore ? 'yellow' : '';
                     // CanvasCtrl.score.className = color;
                     // CanvasCtrl.score.innerText = score;
-                    CanvasCtrl.score.className = 'yellow';
+                    CanvasCtrl.score.className = 'green';
                     CanvasCtrl.score.innerText = '检测通过'
+                    this.stop()
                 }
                 _this.throttle = true;
             }, 500);
