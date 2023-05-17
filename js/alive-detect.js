@@ -27,6 +27,7 @@
           canvas.id = 'webrtcCanvasScreenshot';
           canvas.width = video.style.width;
           canvas.height = video.style.height;
+
           canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
