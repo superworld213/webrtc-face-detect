@@ -20,24 +20,19 @@
             this.ctx = this.canvas.getContext('2d');
         },
         screenshot:function(){
-          const video = document.getElementById('localVideo');
-          const canvas = document.getElementById('webrtcCanvasScreenshot');
-          const canvasCtx = canvas.getContext('2d');
-          const width = screen.width
-          const height = screen.height
-          canvas.width = width;
-          canvas.height = height;
           setTimeout(() => {
-          canvasCtx.drawImage(video,0,0,width,height,0,0,width,height,);
-          const MIME_TYPE = 'image/png'; // 保存文件类型
-          const imgURL = canvas.toDataURL(MIME_TYPE);
-          console.log(imgURL);
-          }, 500);
-          var a = document.createElement("a");
-          document.body.appendChild(a);
-          a.href = save_url;
-          a.download = "";
-          a.click()
+            const video = document.querySelector('#localVideo');
+            const canvas = document.getElementById('webrtcCanvasScreenshot');
+            const canvasCtx = canvas.getContext('2d');
+            const width = parseFloat(window.getComputedStyle(MediaCtrl.video).width);
+            const height = parseFloat(window.getComputedStyle(MediaCtrl.video).height);
+            canvas.width = width;
+            canvas.height = height;
+            canvasCtx.drawImage(video,0,0,width,height);
+            const MIME_TYPE = 'image/png'; // 保存文件类型
+            const imgURL = canvas.toDataURL(MIME_TYPE);
+            console.log(imgURL);
+          }, 100);
         },
         removeCanvas: function () {
             try {

@@ -74,7 +74,9 @@ body>button {
 }
 
 #localVideo {
-    width: 100%;
+    /* width: 100%; */
+    width: 400px;
+    height: 711px;
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -175,8 +177,8 @@ body>button {
     color: green;
 }
 
-/* #webrtcCanvasScreenshot {
-  position: absolute;
+#webrtcCanvasScreenshot {
+  /* position: absolute;
   top: 0px;
-  z-index: -2;
-} */
+  z-index: -2; */
+}

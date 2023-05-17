@@ -3,7 +3,7 @@
  * @Autor: BY
  * @Date: 2023-05-16 17:55:20
  * @LastEditors: BY
- * @LastEditTime: 2023-05-17 09:17:31
+ * @LastEditTime: 2023-05-17 11:15:57
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,7 @@
         <div class="video-wrapper">
             <!-- <video src="./test.mp4" id="localVideo" autoplay muted playsinline></video> -->
             <video id="localVideo" autoplay muted playsinline></video>
-
-            <canvas id="webrtcCanvasScreenshot" ></canvas>
+            <canvas style="height: 711px;width: 400px;" id="webrtcCanvasScreenshot" ></canvas>
         </div>
     </div>
 
@@ -61,19 +60,19 @@
     <!-- 动作检测 -->
     <script src="./js/alive-detect.js"></script>
     <!-- <script>
-          const video = document.getElementById('localVideo');
-          const canvas = document.getElementById('webrtcCanvasScreenshot');
-          const canvasCtx = canvas.getContext('2d');
-          const width = screen.width
-          const height = screen.height
-          canvas.width = width;
-          canvas.height = height;
           setTimeout(() => {
-          canvasCtx.drawImage(video,0,0,width,height,0,0,width,height,);
-          const MIME_TYPE = 'image/png'; // 保存文件类型
-          const imgURL = canvas.toDataURL(MIME_TYPE);
-          console.log(imgURL);
-          }, 500);
+            const video = document.querySelector('#localVideo');
+            const canvas = document.getElementById('webrtcCanvasScreenshot');
+            const canvasCtx = canvas.getContext('2d');
+            const width = parseFloat(window.getComputedStyle(MediaCtrl.video).width);
+            const height = parseFloat(window.getComputedStyle(MediaCtrl.video).height);
+            canvas.width = width;
+            canvas.height = height;
+            canvasCtx.drawImage(video,0,0,width,height);
+            const MIME_TYPE = 'image/png'; // 保存文件类型
+            const imgURL = canvas.toDataURL(MIME_TYPE);
+            console.log(imgURL);
+          }, 100);
     </script> -->
 </body>
 
