@@ -101,14 +101,16 @@
 
       setTimeout(function () {
         if (CanvasCtrl.score > 50) {
-          // var color = score >= _this.goodScore ? 'green'
-          //     : score >= _this.passScore ? 'yellow' : '';
-          // CanvasCtrl.score.className = color;
-          // CanvasCtrl.score.innerText = score;
-          CanvasCtrl.score.className = 'green';
-          CanvasCtrl.score.innerText = '检测通过'
-          CanvasCtrl.screenshot()
-          this.stop()
+          var color = score >= _this.goodScore ? 'green'
+              : score >= _this.passScore ? 'yellow' : '';
+          CanvasCtrl.score.className = color;
+          CanvasCtrl.score.innerText = score;
+          if(CanvasCtrl.score > 50){
+            CanvasCtrl.score.className = 'green';
+            CanvasCtrl.score.innerText = '检测通过'
+            CanvasCtrl.screenshot()
+            this.stop()
+          }
         }
         _this.throttle = true;
       }, 500);

@@ -3,7 +3,7 @@
  * @Autor: BY
  * @Date: 2023-05-16 17:55:20
  * @LastEditors: BY
- * @LastEditTime: 2023-05-17 14:14:15
+ * @LastEditTime: 2023-05-17 14:32:48
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -34,12 +34,12 @@
     <!-- <button class="aliveDetect" id="eye">眨眼检测</button> -->
     <button id="startFaceDetect">人脸检测</button>
 
-    <!-- <script src="./lib/vconsole.min.js"></script> -->
+    <script src="./lib/vconsole.min.js"></script>
     <script>
         var logger = function (...args) {
             console.log('[logger]', args[0], '-->', ...args.slice(1, args.length));
         };
-        // new VConsole();
+        new VConsole();
     </script>
     <!-- clmtrackr.js -->
     <script src="./lib/model_pca_20_svm.js"></script>
