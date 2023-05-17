@@ -45,7 +45,12 @@ a {
 body>button {
     width: 60%;
     margin: 5px 0;
-    padding: 8px;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background-color: #0099CC;
+    font-size: 16px;
+    color: #ffffff;
 }
 
 .webrtc-title {
@@ -74,9 +79,9 @@ body>button {
 }
 
 #localVideo {
-    /* width: 100%; */
-    width: 400px;
-    height: 711px;
+    width: 100%;
+    /* width: 400px;
+    height: 711px; */
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -178,7 +183,7 @@ body>button {
 }
 
 #webrtcCanvasScreenshot {
-  /* position: absolute;
+  position: absolute;
   top: 0px;
-  z-index: -2; */
+  z-index: -2;
 }
