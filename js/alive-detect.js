@@ -21,17 +21,23 @@
         },
         screenshot:function(){
           const video = document.getElementById('localVideo');
-          const canvas = document.createElement('canvas');
+          const canvas = document.getElementById('webrtcCanvasScreenshot');
           const canvasCtx = canvas.getContext('2d');
-
-          canvas.id = 'webrtcCanvasScreenshot';
-          canvas.width = video.style.width;
-          canvas.height = video.style.height;
-
-          canvasCtx.drawImage(video,0,0,video.style.width,video.style.height,0,0,video.style.width,video.style.height,);
+          const width = screen.width
+          const height = screen.height
+          canvas.width = width;
+          canvas.height = height;
+          setTimeout(() => {
+          canvasCtx.drawImage(video,0,0,width,height,0,0,width,height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
           console.log(imgURL);
+          }, 500);
+          var a = document.createElement("a");
+          document.body.appendChild(a);
+          a.href = save_url;
+          a.download = "";
+          a.click()
         },
         removeCanvas: function () {
             try {

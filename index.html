@@ -3,7 +3,7 @@
  * @Autor: BY
  * @Date: 2023-05-16 17:55:20
  * @LastEditors: BY
- * @LastEditTime: 2023-05-17 09:10:41
+ * @LastEditTime: 2023-05-17 09:17:31
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,9 @@
 <body>
     <div class="webrtc-demo">
         <div class="video-wrapper">
-            <video src="./test.mp4" id="localVideo" autoplay muted playsinline></video>
+            <!-- <video src="./test.mp4" id="localVideo" autoplay muted playsinline></video> -->
+            <video id="localVideo" autoplay muted playsinline></video>
+
             <canvas id="webrtcCanvasScreenshot" ></canvas>
         </div>
     </div>
@@ -58,25 +60,21 @@
     <script src="./js/face-detect.js"></script>
     <!-- 动作检测 -->
     <script src="./js/alive-detect.js"></script>
-    <script>
+    <!-- <script>
           const video = document.getElementById('localVideo');
           const canvas = document.getElementById('webrtcCanvasScreenshot');
           const canvasCtx = canvas.getContext('2d');
-          // const width = screen.width*2
-          // const height = screen.height*2
-
-          const width = 400
-          const height = 711
+          const width = screen.width
+          const height = screen.height
           canvas.width = width;
           canvas.height = height;
-          console.log(width,height);
           setTimeout(() => {
           canvasCtx.drawImage(video,0,0,width,height,0,0,width,height,);
           const MIME_TYPE = 'image/png'; // 保存文件类型
           const imgURL = canvas.toDataURL(MIME_TYPE);
           console.log(imgURL);
-          }, 3000);
-    </script>
+          }, 500);
+    </script> -->
 </body>
 
 </html>
