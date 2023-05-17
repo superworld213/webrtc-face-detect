@@ -100,7 +100,7 @@
       _this.throttle = false;
 
       setTimeout(function () {
-        if (CanvasCtrl.score > 50) {
+        if (CanvasCtrl.score) {
           var color = score >= _this.goodScore ? 'green'
               : score >= _this.passScore ? 'yellow' : '';
           CanvasCtrl.score.className = color;
