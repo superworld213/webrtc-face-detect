@@ -186,7 +186,6 @@
                     ++this.eyeCount >= this.passCount
                 ) {
                     TipCtrl.setText('eye通过');
-                    CanvasCtrl.screenshot()
                     this.stop();
                     FaceDetectCtrl.stop();
                 }
